@@ -40,11 +40,11 @@ class EnvironmentManager: ObservableObject {
     var apiBaseURL: String {
         switch currentEnvironment {
         case .development:
-            return Bundle.main.object(forInfoDictionaryKey: "DEV_API_BASE_URL") as? String ?? "http://localhost:8000"
+            return Bundle.main.object(forInfoDictionaryKey: "DEV_API_BASE_URL") as? String ?? "https://polibase.nl/api"
         case .staging:
-            return Bundle.main.object(forInfoDictionaryKey: "STAGING_API_BASE_URL") as? String ?? "https://api-staging.politicaltranscripts.com"
+            return Bundle.main.object(forInfoDictionaryKey: "STAGING_API_BASE_URL") as? String ?? "https://polibase.nl/api"
         case .production:
-            return Bundle.main.object(forInfoDictionaryKey: "PROD_API_BASE_URL") as? String ?? "https://api.politicaltranscripts.com"
+            return Bundle.main.object(forInfoDictionaryKey: "PROD_API_BASE_URL") as? String ?? "https://polibase.nl/api"
         }
     }
     
